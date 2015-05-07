@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body(ng-app="myApp")
+    header
+      h1="Comments"
+      p="A simple app that allows a user to input comments"
+    main(ng-controller="commentor")
+      section(class='comment-input')
+        p="Add Your Comment"
+        input(ng-model="pushComment")
+        button(ng-click="insert()")="+"
+      section(class='comments' ng-repeat="com in list track by $index")
+        p="{{com}}"
+    footer
+    script(src="http://code.jquery.com/jquery-2.0.3.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js")
+    script(src="/javascripts/function.js")
